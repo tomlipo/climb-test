@@ -17,10 +17,41 @@
     <link rel="icon" href="/climb-test/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/climb-test/assets/index-hNP1LxCc.js"></script>
+    <style>
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1500px;
+        height: 750px;
+        background-color: #2d2e30;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      .loader {
+        border: 5px solid white;
+        border-top: 3px solid #2d2e30;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1000ms linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/climb-test/assets/index-B8SHbOzD.js"></script>
     <link rel="stylesheet" crossorigin href="/climb-test/assets/index-Cph6e4ES.css">
   </head>
   <body>
+    <div id="loading" class="loading"><span class="loader"></span></div>
     <div id="app"></div>
   </body>
 </html>
