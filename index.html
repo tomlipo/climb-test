@@ -3,11 +3,19 @@
   <head>
     <script>
       let preloadedImages = [];
+      let toPreload = 247;
+      let preloaded = 0;
 
       function preload(imageURLs) {
         for (let i = 0; i < imageURLs.length; i++) {
           preloadedImages[i] = new Image();
           preloadedImages[i].src = imageURLs[i];
+          preloadedImages[i].onload = () => {
+            preloaded++;
+            if (preloaded >= toPreload) {
+              document.getElementById("loading").style.display = "none";
+            }
+          };
         }
       }
 
@@ -18,15 +26,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <style>
+      body {
+        padding-top: 20px;
+      }
+
       .loading {
+        position: absolute;
+        margin: auto;
+        left: calc(50% + 2px);
+        transform: translateX(-50%);
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 1500px;
-        height: 750px;
+        width: 1504px;
+        height: 752px;
         background-color: #2d2e30;
-        margin: auto;
-        margin-top: 20px;
+        z-index: 999;
       }
 
       .loader {
@@ -47,8 +62,8 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="/climb-test/assets/index-B8SHbOzD.js"></script>
-    <link rel="stylesheet" crossorigin href="/climb-test/assets/index-Cph6e4ES.css">
+    <script type="module" crossorigin src="/climb-test/assets/index-CRzITune.js"></script>
+    <link rel="stylesheet" crossorigin href="/climb-test/assets/index-DBJb52N0.css">
   </head>
   <body>
     <div id="loading" class="loading"><span class="loader"></span></div>
