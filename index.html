@@ -5,7 +5,7 @@
       let preloadedImages = [];
 
       function preload(imageURLs) {
-        for (let i = 0; i < images.length; i++) {
+        for (let i = 0; i < imageURLs.length; i++) {
           preloadedImages[i] = new Image();
           preloadedImages[i].src = imageURLs[i];
         }
