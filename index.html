@@ -65,7 +65,7 @@
           preloadedImages[i].onload = () => {
             preloaded++;
             if (preloaded >= toPreload) {
-              consol.log('preloaded');
+              console.log('preloaded');
               document.getElementById("loading").style.display = "none";
             }
           };
